@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { GoogleMapsApiService} from '../services/google-maps-api.service';
+
 
 @Component({
   selector: 'app-google-time',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoogleTimeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private mapsService: GoogleMapsApiService) { }
 
   ngOnInit() {
+  }
+
+  onSubmitLoc(form: NgForm) {
+      const origin = form.value.origin;
+      const destination = form.value.destination;
+      this.mapsService.currentTimeCheck(origin, destination);
   }
 
 }

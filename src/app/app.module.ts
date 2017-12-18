@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { GoogleTimeComponent } from './google-time/google-time.component';
+import { GoogleMapsApiService } from './services/google-maps-api.service';
 
 
 
@@ -23,9 +24,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    FormsModule,
+    HttpModule,
+  RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [GoogleMapsApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

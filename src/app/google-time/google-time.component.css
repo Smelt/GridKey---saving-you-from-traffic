@@ -1,6 +1,6 @@
 .pr4 {
   background-color: blue;
-  height: 130%;
+  height: 100%;
 }
 
 form {
@@ -9,9 +9,17 @@ form {
   float: left;
 }
 
+#mapsLogo {
+  float: left;
+  width: 30%;
+  margin-right: 20%;
+  margin-top: 5%;
+}
+
 #googleLogo {
   background-image: url("../../../res/images/MapsLogo.png");
   background-color: green;
   background-size: cover;
+  height: 100px;
   background-position: center;
 }
