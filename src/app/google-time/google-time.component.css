@@ -1,0 +1,17 @@
+.pr4 {
+  background-color: blue;
+  height: 130%;
+}
+
+form {
+  background-color: white;
+  padding: 5%;
+  float: left;
+}
+
+#googleLogo {
+  background-image: url("../../../res/images/MapsLogo.png");
+  background-color: green;
+  background-size: cover;
+  background-position: center;
+}
