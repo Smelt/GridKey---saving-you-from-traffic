@@ -18,7 +18,7 @@ export class GoogleTimeComponent implements OnInit {
   onSubmitLoc(form: NgForm) {
       const origin = form.value.origin;
       const destination = form.value.destination;
-      this.mapsService.currentTimeCheck(origin, destination);
+      const travelTime = this.mapsService.currentTimeCheck(origin, destination);
   }
 
 }

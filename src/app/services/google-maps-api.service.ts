@@ -16,8 +16,7 @@ export class GoogleMapsApiService {
      return this.http.get(this.serverURL + '/mapdata/' + origin + '/' + destination)
      .subscribe((response: Response) => {
         const travelTime = response.json();
-        console.log(travelTime);
-        console.log("POST TRAVEL TIME");
+        return travelTime;
      });
       /*
       const travelTime = response.json();
