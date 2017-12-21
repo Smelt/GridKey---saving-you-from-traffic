@@ -13,11 +13,8 @@ export class GoogleMapsApiService {
 
    currentTimeCheck(origin: string, destination: string) {
      // console.log(this.serverURL + '/mapdata/' + origin + '/' + destination);
-     return this.http.get(this.serverURL + '/mapdata/' + origin + '/' + destination)
-     .subscribe((response: Response) => {
-        const travelTime = response.json();
-        return travelTime;
-     });
+     return this.http.get(this.serverURL + '/mapdata/' + origin + '/' + destination);
+
       /*
       const travelTime = response.json();
       console.log(travelTime);

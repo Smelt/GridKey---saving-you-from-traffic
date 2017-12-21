@@ -1,5 +1,7 @@
-<nav class="navbar transparent ">
-  <div class="container-fluid">
+
+<nav class="navbar navbar-fixed-top ">
+
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -9,25 +11,24 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">GridKey</a>
+      <a class="navbar-brand" href="#"><i class="fa fa-map-o" aria-hidden="true"></i> GridKey</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li>
-          <a id="blue" href="#">Tech Stack</a>
-        </li>
-        <li>
-          <a href="#">Mission Statement</a>
-         </li>
-      </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a routerLink="google-time">Login</a>
-        </li>
+
+          <li>
+            <a id="blue" href="#">Tech Stack</a>
+          </li>
+          <li>
+            <a href="#">Mission Statement</a>
+          </li>
         <li>
           <a href="#">Sign Up</a>
+        </li>
+        <li>
+          <a id="planTripsBtn" routerLink="google-time" routerLinkActive="active">Plan Trips</a>
         </li>
 
       </ul>
@@ -36,6 +37,36 @@
   </div>
   <!-- /.container-fluid -->
 </nav>
-
+<div id="seperator"></div>
 
 <router-outlet></router-outlet>
+
+
+
+
+<div class="footer">
+  <div class="row">
+    <div class="col-xs-6">
+      <a href="https://github.com/smelt">GitHub Link</a>
+    </div>
+    <div class="col-xs-6">
+      <a href="https://www.linkedin.com/in/shivam-satyarthi-b78750118/">LinkedIn</a>
+    </div>
+      <div class="row">
+    <div class="col-xs-4">
+      <a>Terms of Use</a>
+    </div>
+    <div class="col-xs-6">
+      <a>SiteMap</a>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-xs-6">
+      <p>By:Shivam Satyarthi</p>
+    </div>
+    </div>
+  </div>
+
+</div>
+
+
