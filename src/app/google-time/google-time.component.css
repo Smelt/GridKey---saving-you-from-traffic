@@ -1,12 +1,8 @@
-.pr4 {
-  background-color: blue;
-  height: 100%;
-}
-
 form {
   background-color: white;
   padding: 5%;
   float: left;
+  width: 80%;
 }
 
 #mapsLogo {
@@ -24,8 +20,64 @@ form {
   background-position: center;
 }
 
+#filler {
+  height: 80%;
+}
+
+#box {
+  border: 1px solid #6d6f7b;
+  opacity: 80%;
+  margin-bottom: 20px;
+  padding-left: 8%;
+  padding-right: 0%;
+  color: #6d6f7b;
+  width: 100%;
+  align-items: center;
+}
+
+.topRight {
+  width: 50%;
+  border: 1px solid #6d6f7b;
+  margin-top: 3.2%;
+  align-content: center;
+  align-items: center;
+  margin-left: 18%;
+}
+
 canvas {
   height: 100%;
   width: 100%;
   background: black;
+}
+
+#swapArrows {
+  color: black;
+}
+
+tr {
+  margin-top: 100px;
+  border: 1px solid rgba(220, 220, 220, 0.5);
+  padding-top: 300px;
+}
+
+tr:hover {
+  font-size: 1.5em;
+  background: rgb(192, 209, 214);
+  text-decoration: none;
+}
+
+#arrowSpace {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.suggestedLocs {
+  color: black;
+}
+
+.table {
+  color: #6d6f7b;
+  border: 1px solid #6d6f7b;
+
+
 }
