@@ -37,10 +37,13 @@ nav a {
   padding-left: 20%;
 }
 
+#signUpBtn {
+  margin-right: 18px;
+}
+
 #planTripsBtn {
   border: solid 1px black;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-top: 10px;
-  margin-left: 18px;
 }

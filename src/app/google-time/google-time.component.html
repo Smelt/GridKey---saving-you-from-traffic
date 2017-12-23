@@ -1,26 +1,58 @@
+<div class="container-fluid">
+  <div class="row">
+     <div class="col-lg-5">
+        <form (ngSubmit)="onSubmitLoc(f)" #f="ngForm" novalidate>
+          <div id="box">
+            <h3>Plan Journey</h3>
+          <mat-form-field class="example-full-width">
+            <input matInput  type="text" class="form-control" id="origin" name="origin" ngModel placeholder="Origin">
+          </mat-form-field>
+              <button mat-icon-button color="primary">
+                <i class="material-icons">swap_horiz</i>
+              </button>
+          <mat-form-field class="example-full-width">
+              <input matInput type="text" class="form-control" id="destination" name="destination" ngModel placeholder="Destination">
+          </mat-form-field>
+          <button mat-icon-button color="primary" type="submit">
+          <i class="material-icons">directions</i>
+          </button>
+          </div>
+          <table id="pop-locations" class="table">
+            <tbody>
+              <tr>
+                <a>
+                  <i class="fa fa-home" aria-hidden="true"></i> Home
+                  <span class="suggestedLocs">432 Park Ave, New York, NY 10022 </span>
+                </a>
+              </tr>
+              <tr id="green">
+                <a>
+                  <i class="fa fa-suitcase" aria-hidden="true"></i> Work
+                  <span class="suggestedLocs">285 Fulton St, New York, NY 10007</span>
+                </a>
+              </tr>
+              <tr>
+                <a>
+                  <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  <span class="suggestedLocs"> 1000 5th Ave, New York, NY 10028</span>
+                </a>
+              </tr>
+              <tr>
+                <a>
+                  <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  <span class="suggestedLocs"> 350 5th Ave, New York, NY 10118</span>
+                </a>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+     </div>
 
-
-<div class="pr4">
-  <div class="container">
-    <div class="row">
-    <img id="mapsLogo" src="https://financialtribune.com/sites/default/files/field/image/17january/11_d_google_169_brief.png" >
-
-    <form (ngSubmit)="onSubmitLoc(f)" #f="ngForm" novalidate>
-      <div class="form-group">
-        <label for="origin">Origin</label>
-        <input type="text" class="form-control" id="origin" name="origin" ngModel placeholder="Ex- 432 Park Avenue">
+      <div class="col-md-7 ">
+        <img class="topRight" src="/assets/images/fielddrive.jpg">
       </div>
-      <div class="form-group">
-        <label for="destination">Destination</label>
-        <input type="text" ngModel name="destination" class="form-control" id="destination" placeholder="Bloomfield Connecticut">
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input ngModel name="tolls" type="checkbox" class="form-check-input">Tolls
-        </label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    </div>
   </div>
+</div>
+<div id="filler">
+
 </div>

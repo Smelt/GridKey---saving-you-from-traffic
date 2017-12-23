@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { GoogleTimeComponent } from './google-time/google-time.component';
 import { GoogleMapsApiService } from './services/google-maps-api.service';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 
 const appRoutes: Routes = [
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    MaterialModule,
   RouterModule.forRoot(appRoutes)
   ],
   providers: [GoogleMapsApiService],
