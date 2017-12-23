@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -9,6 +8,7 @@ import { GoogleTimeComponent } from './google-time/google-time.component';
 import { GoogleMapsApiService } from './services/google-maps-api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -19,9 +19,12 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
+
     AppComponent,
+    FormsModule,
     LandingComponent,
-    GoogleTimeComponent
+    GoogleTimeComponent,
+
   ],
   imports: [
     BrowserModule,
