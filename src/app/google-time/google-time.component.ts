@@ -16,9 +16,10 @@ export class GoogleTimeComponent implements OnInit {
 
   // lineChart
   public lineChartData: Array<any> = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' }
+    { data: [65, 59, 62, 63, 56, 55, 56, 53, 59, 63, 60, 54, 50, 60, 62, 63, 65, 63, 51, 50, 49, 48], label: 'Unloaded' }
   ];
-  public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChartLabels: Array<any> = ['5:00', '6:00', '7:00', '8:00', '9:00', '10:00', '11:00',
+   '12:00', '1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:00'];
   public lineChartOptions: any = {
     responsive: true,
     scales: {
@@ -99,6 +100,7 @@ export class GoogleTimeComponent implements OnInit {
   constructor(private mapsService: GoogleMapsApiService) { }
 
   ngOnInit() {
+
   }
 
 

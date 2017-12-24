@@ -1,70 +1,37 @@
-form {
-  background-color: white;
-  padding: 5%;
-  float: left;
-  width: 80%;
-}
-
-#mapsLogo {
-  float: left;
-  width: 30%;
-  margin-right: 20%;
-  margin-top: 5%;
-}
-
-#googleLogo {
-  background-image: url("../../../res/images/MapsLogo.png");
-  background-color: green;
-  background-size: cover;
-  height: 100px;
-  background-position: center;
-}
-
-#filler {
-  height: 80%;
-}
 
 #box {
   border: 1px solid #6d6f7b;
-  opacity: 80%;
-  margin-bottom: 20px;
-  padding-left: 8%;
-  padding-right: 0%;
   color: #6d6f7b;
   width: 100%;
-  align-items: center;
 }
 
-.topRight {
-  width: 50%;
-  border: 1px solid #6d6f7b;
-  margin-top: 3.2%;
-  align-content: center;
-  align-items: center;
-  margin-left: 18%;
+a {
+  text-decoration: none;
 }
 
-#graph {
-  height: 30%;
-  background: rgba(255, 255, 255, 0.7);
-  width: 50%;
+h1 {
+  font-size: 2.5em;
 }
 
-
-
-#swapArrows {
-  color: black;
+#fields {
+  margin: auto;
 }
+
 
 tr {
-  margin-top: 100px;
   border: 1px solid rgba(220, 220, 220, 0.5);
-  padding-top: 300px;
+}
+
+.personalContainer {
+  width: 90%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 2%;
 }
 
 tr:hover {
   font-size: 1.5em;
-  background: rgb(192, 209, 214);
+  background: rgb(202, 244, 255);
   text-decoration: none;
 }
 
@@ -77,7 +44,7 @@ tr:hover {
   color: black;
 }
 
-.table {
-  color: #6d6f7b;
-  border: 1px solid #6d6f7b;
+form {
+  margin: auto;
 }
+
