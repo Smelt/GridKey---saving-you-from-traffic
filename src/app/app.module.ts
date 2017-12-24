@@ -9,7 +9,7 @@ import { GoogleTimeComponent } from './google-time/google-time.component';
 import { GoogleMapsApiService } from './services/google-maps-api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-
+import { ChartsModule } from 'ng2-charts';
 
 const appRoutes: Routes = [
 
@@ -25,6 +25,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    ChartsModule,
     FormsModule,
     HttpModule,
     MaterialModule,
