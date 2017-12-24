@@ -44,11 +44,13 @@ form {
   margin-left: 18%;
 }
 
-canvas {
-  height: 100%;
-  width: 100%;
+#graph {
+  height: 30%;
   background: rgba(255, 255, 255, 0.7);
+  width: 50%;
 }
+
+
 
 #swapArrows {
   color: black;
@@ -78,6 +80,4 @@ tr:hover {
 .table {
   color: #6d6f7b;
   border: 1px solid #6d6f7b;
-
-
 }

@@ -12,9 +12,9 @@ exports.getWeekDayTimes = function (dayCode) {
   nextDay.set({ h: 4, m: 0, s: 0, ms: 0 });
 
   var dayTimes = [];
-  dayTimes.push(dayTimes);
+  dayTimes.push(nextDay.clone());
   //increments value from 4:00 to 22:00 (15 mins * 4)hr * 18 hours
-  for (var t = 0; t < incrementsOfDay; t++) {
+  for (var t = 1; t < incrementsOfDay; t++) {
     dayTimes[t] = nextDay.add(15, 'minutes').clone();
   }
 
@@ -33,24 +33,32 @@ exports.getFakeTimes = function (duration, dayTimes) {
   }
   incrementTime(5, 7, smallTrafficFactor, durationTimes);
   incrementTime(7, 8, largeTrafficFactor, durationTimes);
-  incrementTime(8, 9, largeTrafficFactor * -1, durationTimes);
-  incrementTime(9, 11, smallTrafficFactor * -1, durationTimes);
-  incrementTime(11, 13, smallTrafficFactor, durationTimes);
-  incrementTime(13, 15, smallTrafficFactor * -1, durationTimes);
-  incrementTime(13, 15, smallTrafficFactor, durationTimes);
-  incrementTime(15, 18, largeTrafficFactor, durationTimes);
-  incrementTime(18, 20, largeTrafficFactor * -1, durationTimes);
-  incrementTime(20, 22, smallTrafficFactor * -1, durationTimes);
+  incrementTime(7, 8, largeTrafficFactor/2, durationTimes);
+  decrementTime(8, 9, largeTrafficFactor/2 , durationTimes);
+  decrementTime(9, 11, smallTrafficFactor/2 , durationTimes);
+  decrementTime(11, 13, smallTrafficFactor/3, durationTimes);
+  decrementTime(13, 15, smallTrafficFactor/8 , durationTimes);
+  incrementTime(15, 16, largeTrafficFactor, durationTimes);
+  incrementTime(16, 17, smallTrafficFactor, durationTimes);
+  decrementTime(17, 19, largeTrafficFactor/2, durationTimes);
+  decrementTime(19, 22, smallTrafficFactor/3, durationTimes);
 
   var fullTimeArr = [];
   for (var i = 0; i < dayTimes.length; i++) {
+
     var time = dayTimes[i];
     var commuteTime = moment.utc(durationTimes[i] * 1000).format('H:mm');
     var commuteSeconds = durationTimes[i];
+    var commuteMinutes = Math.floor(durationTimes[i]/60);
+   // console.log(commuteMinutes);
     var timeFormat = time.format('H:mm');
-    fullTimeArr.push({ time: time, commuteTime: commuteTime, timeStr: timeFormat, commuteSeconds: commuteSeconds });
+    fullTimeArr.push({ time: time, commuteTime: commuteTime, timeStr: timeFormat, commuteSeconds: commuteSeconds, commuteMinutes: commuteMinutes });
+   // console.log(durationTimes[i] + " " + i);
   }
 
+  for(var i = 0; i < durationTimes.length; i += 4){
+  //  console.log( ((i + 1) /4 + 4) + ":00 " + fullTimeArr[i].commuteMinutes);
+  }
   return fullTimeArr;
 
 
@@ -61,8 +69,19 @@ function incrementTime(startT, endT, factor, durationTimes) {
   var end = (endT - 4) * 4;
 
   for (var t = start; t < end; t++) {
+   durationTimes[t] = durationTimes[t - 1] + factor;
+  }
 
-    durationTimes[t] = durationTimes[t - 1] + factor;
+
+}
+
+function decrementTime(startT, endT, factor, durationTimes) {
+  var start = (startT - 4) * 4;
+  var end = (endT - 4) * 4;
+
+  for (var t = start; t < end; t++) {
+
+    durationTimes[t] = durationTimes[t - 1] - factor;
   }
 
 

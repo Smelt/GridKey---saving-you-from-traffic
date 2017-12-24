@@ -20,7 +20,17 @@ export class GoogleTimeComponent implements OnInit {
   ];
   public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public lineChartOptions: any = {
-    responsive: true
+    responsive: true,
+    scales: {
+      yAxes: [{
+        display: true,
+        ticks: {
+          suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+          // OR //
+          beginAtZero: true   // minimum value will be 0.
+        }
+      }]
+    }
   };
 
   public lineChartColors: Array<any> = [
@@ -65,25 +75,23 @@ export class GoogleTimeComponent implements OnInit {
       const travelArr = travelObj.arr;
       const departureTimes = [];
       const commuteTimeSeconds = [];
-
-      for (let i = 0; i < this.lineChartData.length; i++) {
-        console.log(this.lineChartData[i]);
-      }
+      const commuteTimeMinutes = [];
+      const commuteTime = [];
 
       for (let i = 0; i < 3; i++) {
         const t = travelArr[i];
-        console.log('Time Format ' + t.timeStr + ' Commute Time: ' + t.commuteTime + ' Commute Seconds ' + t.commuteSeconds + " " + i);
+       // console.log('Time Format ' + t.timeStr + ' Commute Time: ' + t.commuteTime + ' Commute Seconds ' + t.commuteSeconds + " " + i);
       }
-      for (let i = 0; i < travelArr.length; i++) {
+      for (let i = 0; i < travelArr.length - 1; i++) {
+        commuteTimeMinutes.push(travelArr[i].commuteMinutes);
+      }
+
+      for (let i = 0; i < travelArr.length; i += 1) {
         departureTimes.push(travelArr[i].timeStr);
-        commuteTimeSeconds.push(travelArr[i].commuteSeconds);
       }
       this.lineChartLabels = departureTimes;
-      this.lineChartData[0].data = commuteTimeSeconds;
+      this.lineChartData[0].data = commuteTimeMinutes;
       this.lineChartData[0].label = "Commute";
-
-
-
     });
 
   }
