@@ -18,11 +18,16 @@ export class GoogleTimeComponent implements OnInit {
   }
 
   onSubmitLoc(form: NgForm) {
-      const origin = form.value.origin;
-      const destination = form.value.destination;
+    const origin = form.value.origin;
+    const destination = form.value.destination;
     this.mapsService.currentTimeCheck(origin, destination).subscribe((response: Response) => {
-      const travelTime3 = response.json();
-      console.log('Travel time 3 ' + travelTime3.duration);
+      const travelObj = response.json();
+      const travelArr = travelObj.arr;
+
+      for (let i = 0; i < travelArr.length; i++) {
+        const t = travelArr[i];
+        console.log('Time Format ' + t.timeStr + ' Commute Time: ' + t.commuteTime + ' Commute Seconds ' + t.commuteSeconds);
+      }
     });
 
   }
