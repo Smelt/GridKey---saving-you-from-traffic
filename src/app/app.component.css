@@ -21,20 +21,28 @@ nav a {
 }
 
 .footer {
-  margin: -.3%;
-  padding: 0;
-  background-color: rgb(235, 235, 235);
+  border-top: 1px solid #6d6f7b;
+  background-color: rgb(245, 245, 245);
   height: 20%;
+}
+
+.row {
+  line-height: 2.0;
+}
+
+.footerContainer {
+  margin-left: 4%;
+  margin-right: 4%;
+  padding-top: 2%;
 }
 
 .footer a {
   color: #6d6f7b;
   size: 1.2em;
-  padding-left: 20%;
 }
 
-.footer p {
-  padding-left: 20%;
+.footer i {
+  margin-right: 2%;
 }
 
 #signUpBtn {

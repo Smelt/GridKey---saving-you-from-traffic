@@ -28,7 +28,7 @@ tr {
 #construction {
   margin-top: -2px;
   padding-top: -3px;
-  color: red;
+  color: rgb(156, 156, 156);
 }
 
 tr:hover {
