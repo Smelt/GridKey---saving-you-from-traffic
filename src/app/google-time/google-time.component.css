@@ -1,69 +1,48 @@
-form {
-  background-color: white;
-  padding: 5%;
-  float: left;
-  width: 80%;
-}
-
-#mapsLogo {
-  float: left;
-  width: 30%;
-  margin-right: 20%;
-  margin-top: 5%;
-}
-
-#googleLogo {
-  background-image: url("../../../res/images/MapsLogo.png");
-  background-color: green;
-  background-size: cover;
-  height: 100px;
-  background-position: center;
-}
-
-#filler {
-  height: 80%;
-}
-
 #box {
   border: 1px solid #6d6f7b;
-  opacity: 80%;
-  margin-bottom: 20px;
-  padding-left: 8%;
-  padding-right: 0%;
   color: #6d6f7b;
   width: 100%;
-  align-items: center;
+  padding-left: 16%;
+  padding-bottom: 2%;
 }
 
-.topRight {
-  width: 50%;
-  border: 1px solid #6d6f7b;
-  margin-top: 3.2%;
-  align-content: center;
-  align-items: center;
-  margin-left: 18%;
+a {
+  text-decoration: none;
 }
 
-canvas {
-  height: 100%;
-  width: 100%;
-  background: black;
-}
-
-#swapArrows {
-  color: black;
+h3 {
+  font-size: 1.6em;
 }
 
 tr {
-  margin-top: 100px;
   border: 1px solid rgba(220, 220, 220, 0.5);
-  padding-top: 300px;
+}
+
+.personalContainer {
+  width: 100%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 2%;
+}
+
+#construction {
+  margin-top: -2px;
+  padding-top: -3px;
+  color: rgb(156, 156, 156);
 }
 
 tr:hover {
   font-size: 1.5em;
-  background: rgb(192, 209, 214);
+  background: rgb(202, 244, 255);
   text-decoration: none;
+}
+
+#planner span {
+  padding-right: 60px;
+}
+
+#justTime {
+  padding-right: 115px;
 }
 
 #arrowSpace {
@@ -73,11 +52,36 @@ tr:hover {
 
 .suggestedLocs {
   color: black;
+  margin-top: 2%;
+}
+
+#pop-locations {
+  margin-top: 5%;
+  padding-left: 2%;
+  padding-top: 3%;
+  border: solid 1px #6d6f7b;
 }
 
 .table {
-  color: #6d6f7b;
+  width: 80%;
+}
+
+#planner {
+  margin-top: 10%;
   border: 1px solid #6d6f7b;
+  color: #6d6f7b;
+  width: 100%;
+  padding-left: 16%;
+  padding-bottom: 2%;
+}
 
+#graph {
+  padding: 1%;
+  padding-top: 2%;
+  border: 1px solid #6d6f7b;
+}
 
+#filler {
+  height: 40%;
+  width: 100%;
 }

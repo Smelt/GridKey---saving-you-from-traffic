@@ -1,43 +1,43 @@
-<div class="container-fluid">
+<div class="personalContainer">
   <div class="row">
-     <div class="col-lg-5">
+    <div class="col-md-5">
+      <div id="box">
         <form (ngSubmit)="onSubmitLoc(f)" #f="ngForm" novalidate>
-          <div id="box">
-            <h3>Plan Journey</h3>
+          <h3>Plan Journey</h3>
           <mat-form-field class="example-full-width">
-            <input matInput  type="text" class="form-control" id="origin" name="origin" ngModel placeholder="Origin">
+            <input matInput type="text" class="form-control" id="origin" name="origin" [(ngModel)]="origin" placeholder="Origin">
           </mat-form-field>
-              <button mat-icon-button color="primary">
-                <i class="material-icons">swap_horiz</i>
-              </button>
+          <button type="button" (click)="switchButton()" mat-icon-button color="primary">
+            <i class="material-icons">swap_horiz</i>
+          </button>
           <mat-form-field class="example-full-width">
-              <input matInput type="text" class="form-control" id="destination" name="destination" ngModel placeholder="Destination">
+            <input matInput [(ngModel)]="destination" type="text" class="form-control" id="destination" name="destination" ngModel placeholder="Destination">
           </mat-form-field>
           <button mat-icon-button color="primary" type="submit">
-          <i class="material-icons">directions</i>
+            <i class="material-icons">directions</i>
           </button>
-          </div>
-          <table id="pop-locations" class="table">
+
+          <table class="table">
             <tbody>
-              <tr>
+              <tr (click)="frequentLocationButton('432 Park Ave, New York, NY 10022')">
                 <a>
                   <i class="fa fa-home" aria-hidden="true"></i> Home
                   <span class="suggestedLocs">432 Park Ave, New York, NY 10022 </span>
                 </a>
               </tr>
-              <tr id="green">
+              <tr (click)="frequentLocationButton('285 Fulton St, New York, NY 10007')">
                 <a>
                   <i class="fa fa-suitcase" aria-hidden="true"></i> Work
                   <span class="suggestedLocs">285 Fulton St, New York, NY 10007</span>
                 </a>
               </tr>
-              <tr>
+              <tr (click)="frequentLocationButton('1000 5th Ave, New York, NY 10028')">
                 <a>
                   <i class="fa fa-clock-o" aria-hidden="true"></i>
                   <span class="suggestedLocs"> 1000 5th Ave, New York, NY 10028</span>
                 </a>
               </tr>
-              <tr>
+              <tr (click)="frequentLocationButton('350 5th Ave, New York, NY 10118')">
                 <a>
                   <i class="fa fa-clock-o" aria-hidden="true"></i>
                   <span class="suggestedLocs"> 350 5th Ave, New York, NY 10118</span>
@@ -46,13 +46,33 @@
             </tbody>
           </table>
         </form>
-     </div>
-
-      <div class="col-md-7 ">
-        <img class="topRight" src="/assets/images/fielddrive.jpg">
       </div>
+        <div id="planner">
+          <h3>Workday Planner</h3>
+            <em id="construction">(under construction)</em>
+            <div>
+              <label id="labelAlcoholContent" for="hoursAtWork">Time at Work (including Breaks)</label>
+              <mat-slider [(ngModel)]="hoursAtWork" thumb-label="true" color="primary" id="hoursAtWork" min="0" max="12" step="0.5" displayValue="number"
+                value="8.0"></mat-slider>
+            </div>
+          <p>Suggested morning departure:<span></span>{{morningDeparture}}</p>
+          <p>Suggested evening departure: <span></span>{{eveningDeparture}}</p>
+          <p>Total commute time: <a id="justTime"></a>1:59</p>
+        </div>
+    </div>
+
+
+
+    <div class="col-md-7">
+      <div id="graphContainer">
+        <canvas id="graph" baseChart height="210" width="400" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+          [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+        </div>
+    </div>
   </div>
-</div>
-<div id="filler">
+  </div>
+  <div id="filler">
+
 
 </div>

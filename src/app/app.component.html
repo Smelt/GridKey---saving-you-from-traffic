@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><i class="fa fa-map-o" aria-hidden="true"></i> GridKey</a>
+      <a class="navbar-brand" routerLink="/"><i class="fa fa-map-o" aria-hidden="true"></i> GridKey</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,13 +19,13 @@
       <ul class="nav navbar-nav navbar-right">
 
           <li>
-            <a id="blue" routerLink="/">Tech Stack</a>
+            <a routerLinkActive="active" id="blue" routerLink="tech-stack">Tech Stack</a>
           </li>
           <li>
-            <a href="#">Mission Statement</a>
+            <a  routerLinkActive="active" routerLink="uber-tool">Uber Tool</a>
           </li>
         <li>
-          <a href="#" id="signUpBtn" >Sign Up</a>
+          <a  routerLinkActive="active" routerLink="/" id="signUpBtn" >Sign Up</a>
         </li>
         <li>
           <a id="planTripsBtn" routerLink="google-time" routerLinkActive="active">Plan Trips</a>
@@ -40,28 +40,30 @@
 <div id="seperator"></div>
 <router-outlet></router-outlet>
 <div class="footer">
-  <div class="row">
-    <div class="col-xs-6">
-      <a href="https://github.com/smelt">GitHub Link</a>
-    </div>
-    <div class="col-xs-6">
-      <a href="https://www.linkedin.com/in/shivam-satyarthi-b78750118/">LinkedIn</a>
-    </div>
-      <div class="row">
-    <div class="col-xs-4">
-      <a>Terms of Use</a>
-    </div>
-    <div class="col-xs-6">
-      <a>SiteMap</a>
-    </div>
+  <div class="footerContainer">
+    <div class="row">
+      <div class="col-xs-6">
+        <a href="https://github.com/smelt"><i class="fa fa-github" aria-hidden="true"></i> GitHub Link</a>
+      </div>
+      <div class="col-xs-6">
+        <a href="https://www.linkedin.com/in/shivam-satyarthi-b78750118/"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+      </div>
     </div>
     <div class="row">
-    <div class="col-xs-6">
-      <p>By:Shivam Satyarthi</p>
+      <div class="col-xs-6">
+        <a><i class="fa fa-gavel" aria-hidden="true"></i>Terms of Use</a>
+      </div>
+      <div class="col-xs-6">
+        <a><i class="fa fa-sitemap" aria-hidden="true"></i> SiteMap</a>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <p><i class="fa fa-male" aria-hidden="true"></i> Shivam Satyarthi</p>
+      </div>
     </div>
   </div>
-
 </div>
+
 
 
