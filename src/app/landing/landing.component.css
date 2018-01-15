@@ -57,8 +57,10 @@ img {
   margin: 0;
   padding: 0;
   width: 100%;
+  margin-bottom: -4px;
 }
 
 .container-fluid {
   line-height: 1.428;
+  margin-top: -1px;
 }

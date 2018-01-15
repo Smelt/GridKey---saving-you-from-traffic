@@ -24,6 +24,7 @@ nav a {
   border-top: 1px solid #6d6f7b;
   background-color: rgb(245, 245, 245);
   height: 20%;
+  margin-top: -1px;
 }
 
 .row {
@@ -39,6 +40,7 @@ nav a {
 .footer a {
   color: #6d6f7b;
   size: 1.2em;
+
 }
 
 .footer i {
