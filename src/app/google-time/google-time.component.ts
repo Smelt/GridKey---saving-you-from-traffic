@@ -17,10 +17,10 @@ export class GoogleTimeComponent implements OnInit {
   public hoursAtWork: number;
 
   // lineChart
-  public lineChartData: Array<any> = [
+  public commuteLengthData: Array<any> = [
     { data: [65, 59, 62, 63, 56, 55, 56, 53, 59, 63, 60, 54, 50, 60, 62, 63, 65, 63, 51, 50, 49, 48], label: 'Minutes' }
   ];
-  public lineChartLabels: Array<any> = ['5:00', '6:00', '7:00', '8:00', '9:00', '10:00', '11:00',
+  public timeIntervals: Array<any> = ['5:00', '6:00', '7:00', '8:00', '9:00', '10:00', '11:00',
    '12:00', '1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:00'];
   public lineChartOptions: any = {
     responsive: true,
@@ -97,9 +97,10 @@ export class GoogleTimeComponent implements OnInit {
       for (let i = 0; i < travelArr.length; i += 1) {
         departureTimes.push(travelArr[i].timeStr);
       }
-      this.lineChartLabels = departureTimes;
-      this.lineChartData[0].data = commuteTimeMinutes;
-      this.lineChartData[0].label = 'Minutes';
+      this.timeIntervals
+   = departureTimes;
+      this.commuteLengthData[0].data = commuteTimeMinutes;
+      this.commuteLengthData[0].label = 'Minutes';
     });
 
   }
