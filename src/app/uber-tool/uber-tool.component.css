@@ -13,3 +13,98 @@
   padding-bottom: 5%;
   float: left;
 }
+
+#box {
+  border: 1px solid #6d6f7b;
+  color: #6d6f7b;
+  width: 100%;
+  padding-left: 16%;
+  padding-bottom: 2%;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+tr {
+  border: 1px solid rgba(220, 220, 220, 0.5);
+}
+
+.personalContainer {
+  width: 100%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 2%;
+  background-color: white;
+}
+
+#construction {
+  margin-top: -2px;
+  padding-top: -3px;
+  color: rgb(156, 156, 156);
+  background-color: white;
+}
+
+tr:hover {
+  font-size: 1.5em;
+  background: rgb(202, 244, 255);
+  text-decoration: none;
+}
+
+#planner span {
+  padding-right: 60px;
+}
+
+#justTime {
+  padding-right: 115px;
+}
+
+#arrowSpace {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.suggestedLocs {
+  color: black;
+  margin-top: 2%;
+}
+
+#pop-locations {
+  margin-top: 5%;
+  padding-left: 2%;
+  padding-top: 3%;
+  border: solid 1px #6d6f7b;
+}
+
+.table {
+  width: 80%;
+}
+
+#planner {
+  margin-top: 10%;
+  border: 1px solid #6d6f7b;
+  color: #6d6f7b;
+  width: 100%;
+  padding-left: 16%;
+  padding-bottom: 2%;
+  background-color: white;
+}
+
+#graph {
+  padding: 1%;
+  padding-top: 2%;
+  border: 1px solid #6d6f7b;
+  background-color: white;
+}
+
+#filler {
+  height: 40%;
+  width: 100%;
+  background-color: white;
+
+}
