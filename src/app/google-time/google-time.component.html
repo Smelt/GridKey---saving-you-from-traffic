@@ -1,7 +1,7 @@
 <div class="personalContainer">
   <div class="row">
     <div class="col-md-5">
-      <div id="box">
+      <div id="box" class="left-slide">
         <form (ngSubmit)="onSubmitLoc(f)" #f="ngForm" novalidate>
           <h3>Plan Journey</h3>
           <mat-form-field class="example-full-width">
@@ -47,7 +47,7 @@
           </table>
         </form>
       </div>
-        <div id="planner">
+        <div id="planner" class="left-slide">
           <h3>Workday Planner</h3>
             <em id="construction">(under construction)</em>
             <div>
@@ -64,13 +64,13 @@
 
 
     <div class="col-md-7">
-      <div id="graphContainer">
+      <div id="graphContainer" class="right-slide">
         <canvas id="graph" baseChart height="210" width="400" [datasets]="commuteLengthData" [labels]="timeIntervals" [options]="lineChartOptions"
           [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
           (chartClick)="chartClicked($event)"></canvas>
         </div>
 
-        <div id="baseResult" class="col-md-7" *ngIf="duration != -1">
+        <div id="baseResult" class="col-md-7 left-slide" *ngIf="duration != -1">
        
                 <p id="textResult">Traffic free commute time: <span class="results">{{duration}} minutes.</span> <span id="resultsSpacer"></span> Route Distance: <span class="results">{{distance}} miles.</span></p>
   
