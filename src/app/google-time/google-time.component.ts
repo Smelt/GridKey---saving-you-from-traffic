@@ -59,7 +59,10 @@ export class GoogleTimeComponent implements OnInit {
 
   // events
   public chartClicked(e: any): void {
-    console.log(e);
+    let index = e.active[0]._index;
+    
+    console.log(e.active[0]._index);
+
   }
 
   public chartHovered(e: any): void {
