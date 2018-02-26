@@ -16,34 +16,70 @@
 nav a {
   color: #6d6f7b;
   font-family: 'Alegreya Sans SC', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
   height: 100%;
 }
 
+#logoTitle {
+  font-size: 1.5em;
+  letter-spacing: .07em;
+}
+
 .footer {
-  margin: -.3%;
-  padding: 0;
-  background-color: rgb(235, 235, 235);
+  border-top: 1px solid #6d6f7b;
+  background-color: rgb(245, 245, 245);
   height: 20%;
+  margin-top: -1px;
+}
+
+.fa-map {
+  color: green;
+}
+
+
+
+#navSpacer {
+  width: 20px;
+}
+
+.fa-uber {
+  color: black;
+}
+
+.row {
+  line-height: 2.0;
+}
+
+.footerContainer {
+  margin-left: 4%;
+  margin-right: 4%;
+  padding-top: 2%;
 }
 
 .footer a {
   color: #6d6f7b;
   size: 1.2em;
-  padding-left: 20%;
+
 }
 
-.footer p {
-  padding-left: 20%;
+.fa-car {
+  color: rgb(255, 0, 0);
+}
+
+.footer i {
+  margin-right: 2%;
 }
 
 #signUpBtn {
   margin-right: 18px;
 }
 
-#planTripsBtn {
-  border: solid 1px black;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-top: 10px;
+.footerspace {
+  padding-right: 15px;
+
 }
+
+/*CSS transitions */
+
+
+
