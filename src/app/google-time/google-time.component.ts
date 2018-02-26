@@ -97,12 +97,10 @@ export class GoogleTimeComponent implements OnInit {
       for (let i = 0; i < travelArr.length - 1; i++) {
         commuteTimeMinutes.push(travelArr[i].commuteMinutes);
       }
-
       for (let i = 0; i < travelArr.length; i += 1) {
         departureTimes.push(travelArr[i].timeStr);
       }
-      this.timeIntervals
-   = departureTimes;
+      this.timeIntervals = departureTimes;
       this.commuteLengthData[0].data = commuteTimeMinutes;
       this.commuteLengthData[0].label = 'Minutes';
     });

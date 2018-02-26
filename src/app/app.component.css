@@ -16,8 +16,13 @@
 nav a {
   color: #6d6f7b;
   font-family: 'Alegreya Sans SC', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
   height: 100%;
+}
+
+#logoTitle {
+  font-size: 1.5em;
+  letter-spacing: .1em;
 }
 
 .footer {
@@ -25,6 +30,18 @@ nav a {
   background-color: rgb(245, 245, 245);
   height: 20%;
   margin-top: -1px;
+}
+
+.fa-map {
+  color: green;
+}
+
+#navSpacer {
+  width: 20px;
+}
+
+.fa-uber {
+  color: black;
 }
 
 .row {
@@ -43,6 +60,10 @@ nav a {
 
 }
 
+.fa-car {
+  color: rgb(255, 0, 0);
+}
+
 .footer i {
   margin-right: 2%;
 }
@@ -51,9 +72,8 @@ nav a {
   margin-right: 18px;
 }
 
-#planTripsBtn {
-  border: solid 1px black;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-top: 10px;
+.footerspace {
+  padding-right: 15px;
+
 }
+
