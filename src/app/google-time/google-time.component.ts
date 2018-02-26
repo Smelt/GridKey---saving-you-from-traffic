@@ -18,6 +18,11 @@ export class GoogleTimeComponent implements OnInit {
   public distance: number = -1;
   public duration: number = -1;
 
+  public userStartTime: string = '-1';
+  public userStartDuration: number = -1;
+  public userEndTime: string = '-1';
+  public userEndDuration: number = -1;
+
   // lineChart
   public commuteLengthData: Array<any> = [
     { data: [65, 59, 62, 63, 56, 55, 56, 53, 59, 63, 60, 54, 50, 60, 62, 63, 65, 63, 51, 50, 49, 48], label: 'Minutes' }
@@ -59,10 +64,20 @@ export class GoogleTimeComponent implements OnInit {
 
   // events
   public chartClicked(e: any): void {
-    let index = e.active[0]._index;
-    
-    console.log(e.active[0]._index);
-
+    if(e.active[0]._index != undefined){
+      let index = parseInt(e.active[0]._index);
+      let time = this.timeIntervals[index];
+      let duration = parseInt(this.commuteLengthData[0].data[index]);
+      let length = this.timeIntervals.length;
+      if(index < length/2){
+        this.userStartTime = time;
+        this.userStartDuration = duration;
+      }
+      else{
+        this.userStartDuration = time;
+        this.userEndDuration = duration;
+      }
+    }
   }
 
   public chartHovered(e: any): void {
