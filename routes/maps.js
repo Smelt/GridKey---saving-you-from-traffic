@@ -26,7 +26,7 @@ router.get('/mapdata/:origin/:destination', function (req, res) {
         var dayTimes = timeTools.getWeekDayTimes(1);
         var travelArr = timeTools.getFakeTimes(seconds, dayTimes);
   
-        var travelObj = { arr: travelArr, distance: distance, success: true};
+        var travelObj = { arr: travelArr, distance: distance, success: true, duration: duration};
         console.log("Sending response " + travelObj.success);
        res.json(travelObj);
       }
@@ -42,5 +42,5 @@ function handleError(error){
     console.log(error);
 }
 
-Xmodule.exports = router;
+module.exports = router;
   
