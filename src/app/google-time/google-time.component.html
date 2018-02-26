@@ -74,7 +74,7 @@
   </div>
   <div class="row">
 
-      <div id="baseResult" class="bottom-slide" *ngIf="duration != 1">
+      <div id="baseResult" class="bottom-slide" *ngIf="duration != -1">
           <p class="textResult">Traffic free commute time: <span class="results">{{duration}} </span> <span id="resultsSpacer"></span> Route Distance: <span class="results">{{distance}} miles.</span></p>
           <p class="textResult" >Start time: <span class="results-minor">{{userStartTime}} mins</span> <span id="resultsSpacer"> </span>Duration: <span class="results-minor">{{userStartDuration}}</span></p>
           <p class="textResult">Leave time: <span class="results-minor">{{userEndTime}} mins</span> <span id="resultsSpacer"> </span>Duration: <span class="results-minor">{{userEndDuration}}</span></p>
