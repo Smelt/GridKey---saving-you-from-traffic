@@ -1,5 +1,7 @@
-const   express               = require('express'),
-        router                = express.Router(),
+ const   express               = require('express'),
+        router                = express.Router();
+        
+   /*      ,
         schedule              = require('node-schedule'),
         uberService           = require('./uber.js'),
         twilioService         = require('./twilio.js'),
@@ -15,8 +17,8 @@ let locationObj = await googleMapsCaller.geoCodeAddress(starting_address, ending
 let uberObj = await uberCaller.queryUberAPI(locationObj);
   let twilioResponse = twilioCaller.sendMessage(uberObj);
         
-}
+} */
 
 
 
-module.exports = router;
+module.exports = router; 

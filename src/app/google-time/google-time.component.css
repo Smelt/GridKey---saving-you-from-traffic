@@ -87,17 +87,27 @@ tr:hover {
 #baseResult {
   padding: 1%;
   padding-top: 2%;
-  width: 100%;
+  width: 40%;
   border: 1px solid #6d6f7b;
-  margin-top: 6%;
   font-size: 1.2em;
+  align-content: center;
+  margin: 0 auto;
+  margin-top: 4%;
 }
 
-#graph {
+#graphContainer {
   padding: 1%;
   padding-top: 2%;
+  padding-bottom: 2.1%;
   border: 1px solid #6d6f7b;
   background-color: white;
+}
+
+.info-text {
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2.5%;
 }
 
 #filler {
@@ -121,7 +131,20 @@ tr:hover {
   font-weight: 600;
 }
 
-#textResult {
+.results-minor {
+  color: green;
+  background-color:rgba(170, 247, 193, 0.6);
+  border-radius: 8%;
+  margin-top: 5px;
+  padding-left: 1.3px;
+  padding-right: 1.3px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+.textResult {
   text-align: center;
 }
 
@@ -130,4 +153,11 @@ tr:hover {
   padding-right: 2%;
 }
 
+
+
+
+
+.slow-fade-delay {
+  animation: 3.5s ease-in 0s 1 fade-in-animation;
+}
 

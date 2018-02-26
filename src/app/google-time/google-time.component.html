@@ -49,34 +49,36 @@
       </div>
         <div id="planner" class="left-slide">
           <h3>Workday Planner</h3>
-            <em id="construction">(under construction)</em>
             <div>
               <label id="labelAlcoholContent" for="hoursAtWork">Time at Work (including Breaks)</label>
               <mat-slider [(ngModel)]="hoursAtWork" thumb-label="true" color="primary" id="hoursAtWork" min="0" max="12" step="0.5" displayValue="number"
                 value="8.0"></mat-slider>
             </div>
-          <p>Suggested morning departure:<span></span>{{morningDeparture}}</p>
-          <p>Suggested evening departure: <span></span>{{eveningDeparture}}</p>
-          <p>Total commute time: <a id="justTime"></a>1:59</p>
+          <p>Suggested morning departure:<span></span>{{csStart}}</p>
+          <p>Suggested evening departure: <span></span>{{csEnd}}</p>
+          <p>Total commute time: <a id="justTime"></a>{{csTotalCommute}} minutes</p>
         </div>
     </div>
 
 
 
     <div class="col-md-7">
-      <div id="graphContainer" class="right-slide">
-        <canvas id="graph" baseChart height="210" width="400" [datasets]="commuteLengthData" [labels]="timeIntervals" [options]="lineChartOptions"
+      <div id="graphContainer">
+        <canvas  class="right-slide" id="graph" baseChart height="210" width="400" [datasets]="commuteLengthData" [labels]="timeIntervals" [options]="lineChartOptions"
           [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
           (chartClick)="chartClicked($event)"></canvas>
-        </div>
-
-        <div id="baseResult" class="col-md-7 left-slide" *ngIf="duration != -1">
-       
-                <p id="textResult">Traffic free commute time: <span class="results">{{duration}} minutes.</span> <span id="resultsSpacer"></span> Route Distance: <span class="results">{{distance}} miles.</span></p>
-  
-          
-        </div>
+          <div class="info-text slow-fade-delay"><i class="fas fa-info"></i> <em>Ideal traffic times are calculated. But to choose your own start and leave times. Click on a data point in the graph for when you want to start/end commute.</em></div>
+      </div>
+      
     </div>
+  </div>
+  <div class="row">
+
+      <div id="baseResult" class="bottom-slide" *ngIf="duration != 1">
+          <p class="textResult">Traffic free commute time: <span class="results">{{duration}} </span> <span id="resultsSpacer"></span> Route Distance: <span class="results">{{distance}} miles.</span></p>
+          <p class="textResult" >Start time: <span class="results-minor">{{userStartTime}} mins</span> <span id="resultsSpacer"> </span>Duration: <span class="results-minor">{{userStartDuration}}</span></p>
+          <p class="textResult">Leave time: <span class="results-minor">{{userEndTime}} mins</span> <span id="resultsSpacer"> </span>Duration: <span class="results-minor">{{userEndDuration}}</span></p>
+      </div>
   </div>
   </div>
   <div id="filler">

@@ -12,9 +12,7 @@ export class GoogleTimeComponent implements OnInit {
 
   public origin: string;
   public destination: string;
-  public morningDeparture: string = '6:00';
-  public eveningDeparture: string = '3:00';
-  public hoursAtWork: number;
+  public hoursAtWork: number = 10;
   public distance: number = -1;
   public duration: number = -1;
 
@@ -23,9 +21,12 @@ export class GoogleTimeComponent implements OnInit {
   public userEndTime: string = '-1';
   public userEndDuration: number = -1;
 
+  public csStart: string = "0:00";
+  public csEnd: string = "24:00";
+  public csTotalCommute: number = 60;
   // lineChart
   public commuteLengthData: Array<any> = [
-    { data: [65, 59, 62, 63, 56, 55, 56, 53, 59, 63, 60, 54, 50, 60, 62, 63, 65, 63, 51, 50, 49, 48], label: 'Minutes' }
+    { data: [67, 59, 62, 63, 56, 55, 56, 53, 59, 63, 60, 54, 50, 60, 62, 63, 65, 63, 51, 50, 49, 48], label: 'Minutes' }
   ];
   public timeIntervals: Array<any> = ['5:00', '6:00', '7:00', '8:00', '9:00', '10:00', '11:00',
    '12:00', '1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:00'];
@@ -74,7 +75,7 @@ export class GoogleTimeComponent implements OnInit {
         this.userStartDuration = duration;
       }
       else{
-        this.userStartDuration = time;
+        this.userEndTime = time;
         this.userEndDuration = duration;
       }
     }
@@ -88,6 +89,7 @@ export class GoogleTimeComponent implements OnInit {
     const tempOrigin = this.origin;
     this.origin = this.destination;
     this.destination = tempOrigin;
+    this.idealCommute();
   }
 
   public frequentLocationButton(location: string) {
@@ -99,6 +101,35 @@ export class GoogleTimeComponent implements OnInit {
     }
 
   }
+
+  private idealCommute() {
+    let workTime = this.hoursAtWork;
+    let minDuration = 99999;
+    let startDex = 0;
+    let travelTimes = this.commuteLengthData[0].data;
+    if(travelTimes.length > 18 ){
+      workTime * 4;
+    }
+
+    for(let i = 0; i < travelTimes.length - workTime - 4; i++){
+      let sumTime = travelTimes[i] + travelTimes[i + workTime];
+      if(sumTime < minDuration){
+        minDuration = sumTime;
+        startDex = i;
+      }
+    }
+  
+    this.userStartDuration = travelTimes[startDex];
+    this.userStartTime = this.timeIntervals[startDex];
+    this.userEndDuration = travelTimes[startDex + workTime];
+    this.userEndTime = this.timeIntervals[startDex + workTime]; 
+    this.csStart = this.userStartTime;
+    this.csEnd = this.userEndTime
+    this.csTotalCommute = this.userStartDuration + this.userEndDuration
+    
+  }
+
+  
 
   onSubmitLoc(form: NgForm) {
     const origin = form.value.origin;
@@ -121,13 +152,19 @@ export class GoogleTimeComponent implements OnInit {
       this.timeIntervals = departureTimes;
       this.commuteLengthData[0].data = commuteTimeMinutes;
       this.commuteLengthData[0].label = 'Minutes';
+      this.idealCommute();
     });
+   
 
   }
+
+ 
 
   constructor(private mapsService: GoogleMapsApiService) { }
 
   ngOnInit() {
+    this.idealCommute();
+  
 
   }
 
