@@ -1,4 +1,4 @@
-var moment = require('moment');
+const moment = require('moment');
 
 //18 hours * 4 (15 minutes a day) from 4:00 am to 10pm;
 const incrementsOfDay = 72;
@@ -10,7 +10,6 @@ exports.getWeekDayTimes = function (dayCode) {
   var nextDay = dayCode < moment().weekday() ? moment().weekday(dayCode + 7) : moment().weekday(dayCode);
   //sets the time to 4:00 AM Monday Morning.
   nextDay.set({ h: 4, m: 0, s: 0, ms: 0 });
-
   var dayTimes = [];
   dayTimes.push(nextDay.clone());
   //increments value from 4:00 to 22:00 (15 mins * 4)hr * 18 hours
@@ -21,10 +20,18 @@ exports.getWeekDayTimes = function (dayCode) {
   return dayTimes;
 }
 
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+}
+
 //function gets fake time duration for each of the travel Times
 exports.getFakeTimes = function (duration, dayTimes) {
-  var smallTrafficFactor = duration / 30;
-  var largeTrafficFactor = duration / 10;
+  let qs = getRandomIntInclusive(5,20);
+  let ls = getRandomIntInclusive(15,45);
+  var smallTrafficFactor = duration / qs;
+  var largeTrafficFactor = duration / ls;
   var durationTimes = [];
 
   //initializes the first hour
@@ -67,9 +74,10 @@ exports.getFakeTimes = function (duration, dayTimes) {
 function incrementTime(startT, endT, factor, durationTimes) {
   var start = (startT - 4) * 4;
   var end = (endT - 4) * 4;
-
+  let duration = durationTimes[0];
   for (var t = start; t < end; t++) {
-   durationTimes[t] = durationTimes[t - 1] + factor;
+    let ls = getRandomIntInclusive(-duration/2, duration/2) * .1;
+    durationTimes[t] = durationTimes[t - 1] + factor + ls;
   }
 
 
@@ -78,10 +86,10 @@ function incrementTime(startT, endT, factor, durationTimes) {
 function decrementTime(startT, endT, factor, durationTimes) {
   var start = (startT - 4) * 4;
   var end = (endT - 4) * 4;
-
+  let duration = durationTimes[0];
   for (var t = start; t < end; t++) {
-
-    durationTimes[t] = durationTimes[t - 1] - factor;
+    let ls = getRandomIntInclusive(-duration/4, duration/4) * .1;
+    durationTimes[t] = durationTimes[t - 1] - factor ;
   }
 
 
