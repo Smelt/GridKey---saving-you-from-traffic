@@ -19,25 +19,25 @@
 
           <table class="table">
             <tbody>
-              <tr (click)="frequentLocationButton('432 Park Ave, New York, NY 10022')">
+              <tr class="animated" (click)="frequentLocationButton('432 Park Ave, New York, NY 10022')">
                 <a>
                   <i class="fa fa-home" aria-hidden="true"></i> Home
                   <span class="suggestedLocs">432 Park Ave, New York, NY 10022 </span>
                 </a>
               </tr>
-              <tr (click)="frequentLocationButton('285 Fulton St, New York, NY 10007')">
+              <tr class="animated" (click)="frequentLocationButton('285 Fulton St, New York, NY 10007')">
                 <a>
                   <i class="fa fa-suitcase" aria-hidden="true"></i> Work
                   <span class="suggestedLocs">285 Fulton St, New York, NY 10007</span>
                 </a>
               </tr>
-              <tr (click)="frequentLocationButton('1000 5th Ave, New York, NY 10028')">
+              <tr class="animated" (click)="frequentLocationButton('1000 5th Ave, New York, NY 10028')">
                 <a>
                   <i class="fa fa-clock-o" aria-hidden="true"></i>
                   <span class="suggestedLocs"> 1000 5th Ave, New York, NY 10028</span>
                 </a>
               </tr>
-              <tr (click)="frequentLocationButton('350 5th Ave, New York, NY 10118')">
+              <tr class="animated" (click)="frequentLocationButton('350 5th Ave, New York, NY 10118')">
                 <a>
                   <i class="fa fa-clock-o" aria-hidden="true"></i>
                   <span class="suggestedLocs"> 350 5th Ave, New York, NY 10118</span>
@@ -68,6 +68,13 @@
         <canvas id="graph" baseChart height="210" width="400" [datasets]="commuteLengthData" [labels]="timeIntervals" [options]="lineChartOptions"
           [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
           (chartClick)="chartClicked($event)"></canvas>
+        </div>
+
+        <div id="baseResult" class="col-md-7" *ngIf="duration != -1">
+       
+                <p id="textResult">Traffic free commute time: <span class="results">{{duration}} minutes.</span> <span id="resultsSpacer"></span> Route Distance: <span class="results">{{distance}} miles.</span></p>
+  
+          
         </div>
     </div>
   </div>

@@ -15,6 +15,8 @@ export class GoogleTimeComponent implements OnInit {
   public morningDeparture: string = '6:00';
   public eveningDeparture: string = '3:00';
   public hoursAtWork: number;
+  public distance: number = -1;
+  public duration: number = -1;
 
   // lineChart
   public commuteLengthData: Array<any> = [
@@ -90,6 +92,8 @@ export class GoogleTimeComponent implements OnInit {
       const commuteTimeSeconds = [];
       const commuteTimeMinutes = [];
       const commuteTime = [];
+      this.distance = travelObj.distance;
+      this.duration = travelObj.duration;
       for (let i = 0; i < travelArr.length - 1; i++) {
         commuteTimeMinutes.push(travelArr[i].commuteMinutes);
       }
