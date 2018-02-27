@@ -8,29 +8,15 @@ var uber                  = require('../services/uber.js');
 router.get('/uber', function (req, res) {
   let origin = req.query.origin;
   let destination = req.query.destination;
-  uberData(origin,destination);
+  uberData(origin,destination, res);
 
 });
 
-async function uberData(origin, destination){
-  console.log(origin + " " + destination);
+async function uberData(origin, destination, res){
   let locationObj =  await googleMaps.geoCodeAddress(origin, destination);
   let uberObj = await uber.queryUberAPI(locationObj);
-  console.log("Uber obj");
-  request(query, function (error, response, body) {
-    if (error) {
-      handleError(error);
-    }
-    if (!error && response.statusCode == 200) {
-      console.log(uberObj);
-      console.log("In send off");
-     res.json(uberObj);
-
-    }
-    else{
-      var results = JSON.parse(body);
-    }
-  });
+  res.json(uberObj);
+  
 }
 
 module.exports = router; 

@@ -14,9 +14,7 @@ export class UberApiService {
 
    getUberPrice(origin: string, destination: string) {
      // console.log(this.serverURL + '/mapdata/' + origin + '/' + destination);
-     return this.http.get(this.serverURL + '/uberData/' + origin + '/' + destination);
-
-
+     return this.http.get(this.serverURL + '/uber?' + 'origin=' + origin + '&destination=' + destination);
   }
 
 }
