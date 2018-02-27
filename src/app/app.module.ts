@@ -12,6 +12,7 @@ import { MaterialModule } from './material.module';
 import { ChartsModule } from 'ng2-charts';
 import { UberToolComponent } from './uber-tool/uber-tool.component';
 import { TechStackComponent } from './tech-stack/tech-stack.component';
+import { UberApiService } from './services/uber-api.service';
 
 const appRoutes: Routes = [
 
@@ -37,7 +38,7 @@ const appRoutes: Routes = [
     MaterialModule,
   RouterModule.forRoot(appRoutes)
   ],
-  providers: [GoogleMapsApiService],
+  providers: [GoogleMapsApiService, UberApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
