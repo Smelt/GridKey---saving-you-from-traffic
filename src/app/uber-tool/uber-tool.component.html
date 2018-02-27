@@ -1,7 +1,7 @@
 <div class="personalContainer">
   <div class="row">
-    <div class="col-md-6 left-slide">
-      <div id="box" >
+    <div class="col-md-6 ">
+      <div id="box" class="left-slide">
         <form (ngSubmit)="onSubmitLoc(f)" #f="ngForm" novalidate>
           <h3>Check Price</h3>
           <mat-form-field class="example-full-width">
@@ -44,46 +44,51 @@
                 </tr>
               </tbody>
             </table>
-        </form>
-      </div>
-      
-      <div id="box" >
-          <form (ngSubmit)="onSubmitLoc(f)" #f="ngForm" novalidate>
-            <h3>Check Price</h3>
-            <mat-form-field class="example-full-width">
-              <input matInput type="text" class="form-control" id="origin" name="origin" [(ngModel)]="origin" placeholder="Origin">
-            </mat-form-field>
-            <button type="button" (click)="switchButton()" mat-icon-button color="primary">
-              <i class="material-icons">swap_horiz</i>
-            </button>
-            <mat-form-field class="example-full-width">
-              <input matInput [(ngModel)]="destination" type="text" class="form-control" id="destination" name="destination" ngModel placeholder="Destination">
-            </mat-form-field>
-            <button mat-icon-button color="primary" type="submit">
-              <i class="material-icons">directions</i>
-            </button>
-            <mat-form-field class="example-full-width">
-              <span matPrefix>+1 &nbsp;</span>
-              <input type="tel" matInput placeholder="Telephone">
-              <mat-icon matSuffix>mode_edit</mat-icon>
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field> 
           </form>
-        </div>   
+          <mat-form-field class="example-full-width">
+            <span matPrefix>+1 &nbsp;</span>
+            <input type="tel" matInput placeholder="Telephone">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field> 
+      </div>
     </div>
 
-
+  
 
     <div class="col-md-7">
-      <h1>${{uberPrice}}</h1>
+      
     </div>
   </div>
+  <div class="row">
+    <div class="filler-row">
+      <h1></h1>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-3">
+       
+            <div *ngIf="uberPrice != -1">
+                <div class="centered"><h2 class="car-text fade-in-slow">${{uberPrice}}</h2></div>
+                  <img  id="uber-car" class="slide-car" src="../assets/images/uberCar_burned.png">
+                  
+            </div>
+        
+         
+      </div>
+      <div class="col-md-9">
+  
+      </div>
+    </div>
+   
   </div>
   <div id="filler">
+      
+    </div>
 
 
-</div>
+ 

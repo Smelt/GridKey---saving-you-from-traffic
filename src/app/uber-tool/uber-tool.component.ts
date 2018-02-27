@@ -14,7 +14,7 @@ export class UberToolComponent implements OnInit {
   public origin: string;
   public destination: string;
 
-  public uberPrice: string = "";
+  public uberPrice: string = "-1";
 
   constructor(private uberApiService: UberApiService){ }
 

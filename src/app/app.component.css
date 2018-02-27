@@ -32,9 +32,7 @@ nav a {
   margin-top: -1px;
 }
 
-.fa-map {
-  color: green;
-}
+
 
 
 
@@ -43,7 +41,7 @@ nav a {
 }
 
 .fa-uber {
-  color: black;
+  color: rgb(0, 0, 0, .2);
 }
 
 .row {
@@ -63,7 +61,7 @@ nav a {
 }
 
 .fa-car {
-  color: rgb(255, 0, 0);
+  color: rgb(255, 0, 0, .2);
 }
 
 .footer i {
