@@ -25,6 +25,8 @@ html, body {
 
 @keyframes fade-in-animation {
   0%   { opacity: 0; }
+  10%   { opacity: 0; }
+  25%   { opacity: .4; }
   100% { opacity: 1; }
 }
 
@@ -35,6 +37,9 @@ html, body {
 
 @keyframes slideInFromLeft {
   0% {
+    transform: translateX(-150%);
+  }
+  10% {
     transform: translateX(-100%);
   }
   100% {
@@ -44,6 +49,9 @@ html, body {
 
 @keyframes slideInFromRight {
   0% {
+    transform: translateX(150%);
+  }
+  10% {
     transform: translateX(100%);
   }
   100% {
