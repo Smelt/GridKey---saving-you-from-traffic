@@ -76,7 +76,7 @@ function incrementTime(startT, endT, factor, durationTimes) {
   var end = (endT - 4) * 4;
   let duration = durationTimes[0];
   for (var t = start; t < end; t++) {
-    let ls = getRandomIntInclusive(-duration/2, duration/2) * .1;
+    let ls = getRandomIntInclusive(-duration/2, duration/2) * .05;
     durationTimes[t] = durationTimes[t - 1] + factor + ls;
   }
 
@@ -88,7 +88,7 @@ function decrementTime(startT, endT, factor, durationTimes) {
   var end = (endT - 4) * 4;
   let duration = durationTimes[0];
   for (var t = start; t < end; t++) {
-    let ls = getRandomIntInclusive(-duration/4, duration/4) * .1;
+    let ls = getRandomIntInclusive(-duration/4, duration/4) * .05;
     durationTimes[t] = durationTimes[t - 1] - factor ;
   }
 

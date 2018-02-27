@@ -2,9 +2,8 @@
   <div class="row">
     <div class="col-md-6 left-slide">
       <div id="box" >
-        
         <form (ngSubmit)="onSubmitLoc(f)" #f="ngForm" novalidate>
-          <h3>Price Alerts</h3>
+          <h3>Check Price</h3>
           <mat-form-field class="example-full-width">
             <input matInput type="text" class="form-control" id="origin" name="origin" [(ngModel)]="origin" placeholder="Origin">
           </mat-form-field>
@@ -17,28 +16,70 @@
           <button mat-icon-button color="primary" type="submit">
             <i class="material-icons">directions</i>
           </button>
-          <mat-form-field class="example-full-width">
-            <span matPrefix>+1 &nbsp;</span>
-            <input type="tel" matInput placeholder="Telephone">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-
-          
+          <table class="table">
+              <tbody>
+                <tr class="animated" (click)="frequentLocationButton('432 Park Ave, New York, NY 10022')">
+                  <a>
+                    <i class="fa fa-home" aria-hidden="true"></i> Home
+                    <span class="suggestedLocs">432 Park Ave, New York, NY 10022 </span>
+                  </a>
+                </tr>
+                <tr class="animated" (click)="frequentLocationButton('285 Fulton St, New York, NY 10007')">
+                  <a>
+                    <i class="fa fa-suitcase" aria-hidden="true"></i> Work
+                    <span class="suggestedLocs">285 Fulton St, New York, NY 10007</span>
+                  </a>
+                </tr>
+                <tr class="animated" (click)="frequentLocationButton('1000 5th Ave, New York, NY 10028')">
+                  <a>
+                    <i class="far fa-clock" aria-hidden="true"></i>
+                    <span class="suggestedLocs"> 1000 5th Ave, New York, NY 10028</span>
+                  </a>
+                </tr>
+                <tr class="animated" (click)="frequentLocationButton('350 5th Ave, New York, NY 10118')">
+                  <a>
+                    <i class="far fa-clock" aria-hidden="true"></i>
+                    <span class="suggestedLocs"> 350 5th Ave, New York, NY 10118</span>
+                  </a>
+                </tr>
+              </tbody>
+            </table>
         </form>
-        
-
       </div>
-        
+      
+      <div id="box" >
+          <form (ngSubmit)="onSubmitLoc(f)" #f="ngForm" novalidate>
+            <h3>Check Price</h3>
+            <mat-form-field class="example-full-width">
+              <input matInput type="text" class="form-control" id="origin" name="origin" [(ngModel)]="origin" placeholder="Origin">
+            </mat-form-field>
+            <button type="button" (click)="switchButton()" mat-icon-button color="primary">
+              <i class="material-icons">swap_horiz</i>
+            </button>
+            <mat-form-field class="example-full-width">
+              <input matInput [(ngModel)]="destination" type="text" class="form-control" id="destination" name="destination" ngModel placeholder="Destination">
+            </mat-form-field>
+            <button mat-icon-button color="primary" type="submit">
+              <i class="material-icons">directions</i>
+            </button>
+            <mat-form-field class="example-full-width">
+              <span matPrefix>+1 &nbsp;</span>
+              <input type="tel" matInput placeholder="Telephone">
+              <mat-icon matSuffix>mode_edit</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> 
+          </form>
+        </div>   
     </div>
 
 
 
     <div class="col-md-7">
+      <h1>${{uberPrice}}</h1>
     </div>
   </div>
   </div>
