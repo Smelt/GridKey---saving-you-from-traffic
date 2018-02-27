@@ -1,24 +1,36 @@
- const   express               = require('express'),
-        router                = express.Router();
+const   express               = require('express');
+const router                = express.Router();
+      
+var googleMaps            = require('../services/googleMaps.js');
+var uber                  = require('../services/uber.js');
         
-   /*      ,
-        schedule              = require('node-schedule'),
-        uberService           = require('./uber.js'),
-        twilioService         = require('./twilio.js'),
-        googleMapsService     = require('./googleMaps.js');
-        
-var rule = new schedule.RecurrenceRule();
- //repeats 1st second of every minute
-rule.second = 1;
 
-        
-async function execute(){
-let locationObj = await googleMapsCaller.geoCodeAddress(starting_address, ending_address);
-let uberObj = await uberCaller.queryUberAPI(locationObj);
-  let twilioResponse = twilioCaller.sendMessage(uberObj);
-        
-} */
+router.get('/uber', function (req, res) {
+  let origin = req.query.origin;
+  let destination = req.query.destination;
+  uberData(origin,destination);
 
+});
 
+async function uberData(origin, destination){
+  console.log(origin + " " + destination);
+  let locationObj =  await googleMaps.geoCodeAddress(origin, destination);
+  let uberObj = await uber.queryUberAPI(locationObj);
+  console.log("Uber obj");
+  request(query, function (error, response, body) {
+    if (error) {
+      handleError(error);
+    }
+    if (!error && response.statusCode == 200) {
+      console.log(uberObj);
+      console.log("In send off");
+     res.json(uberObj);
+
+    }
+    else{
+      var results = JSON.parse(body);
+    }
+  });
+}
 
 module.exports = router; 
