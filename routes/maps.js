@@ -12,7 +12,7 @@ router.get('/mapdata/:origin/:destination', function (req, res) {
     origin = 'origin=' + origin;
     destination = 'destination=' + destination;
     var query = googleMaps + origin + "&" + destination + "&" + key;
-  
+    console.log("in orign");
     request(query, function (error, response, body) {
       if (error) {
         handleError(error);
