@@ -45,7 +45,7 @@
               </tbody>
             </table>
           </form>
-          <mat-form-field class="example-full-width">
+<!--           <mat-form-field class="example-full-width">
             <span matPrefix>+1 &nbsp;</span>
             <input type="tel" matInput placeholder="Telephone">
             <mat-icon matSuffix>mode_edit</mat-icon>
@@ -54,7 +54,7 @@
             <input matInput [matDatepicker]="picker" placeholder="Choose a date">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field> 
+          </mat-form-field> --> 
       </div>
     </div>
 
@@ -73,13 +73,19 @@
       <div class="col-md-3">
        
             <div *ngIf="uberPrice != -1">
-                <div class="centered"><h2 class="car-text fade-in-slow">${{uberPrice}}</h2></div>
+                <div class="uberPrice"><h2 class="car-text fade-in-slow">${{uberPrice}}</h2></div>
                   <img  id="uber-car" class="slide-car" src="../assets/images/uberCar_burned.png">
-                  
-            </div>
-        
-         
+                  <div id="uber-x-text"><h2 class="fade-in-slowp">Uber X</h2></div>
+            </div>  
       </div>
+      <div class="col-md-3">
+       
+        <div *ngIf="uberPrice != -1">
+            <div class="uberPrice"><h2 class="xl-text fade-in-slow">${{uberPriceXl}}</h2></div>
+              <img  id="uber-xl" class="slide-car" src="../assets/images/uberBlackPre.jpg">
+              <div id="uber-xl-text"><h2 class="fade-in-slowp">Uber XL</h2></div>
+        </div>  
+    </div>
       <div class="col-md-9">
   
       </div>
