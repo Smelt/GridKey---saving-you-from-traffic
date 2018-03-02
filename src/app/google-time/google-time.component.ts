@@ -108,7 +108,7 @@ export class GoogleTimeComponent implements OnInit {
     let startDex = 0;
     let travelTimes = this.commuteLengthData[0].data;
     if(travelTimes.length > 18 ){
-      workTime * 4;
+      workTime =  workTime * 4;
     }
 
     for(let i = 0; i < travelTimes.length - workTime - 4; i++){
