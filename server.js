@@ -26,7 +26,7 @@ app.use(indexRoutes);
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '8080';
+const port = process.env.PORT || '3000';
 app.set('port', port);
 
 /**
@@ -37,4 +37,4 @@ const server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(port, () => console.log(`API running on localhost:${port}`));
+server.listen(port, () => console.log(`Gridkey running on localhost:${port}`));
