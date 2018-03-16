@@ -25,12 +25,12 @@ html, body {
 
 @keyframes fade-in-animation {
   0%   { opacity: 0; }
-  10%   { opacity: 0; }
+  10%   { opacity: .0; }
   25%   { opacity: .4; }
   100% { opacity: 1; }
 }
 
-.fade-in {
+.fade-in-delayed {
   animation: 1.6s ease-out 0s 1 fade-in-animation;
 }
 
@@ -84,12 +84,12 @@ html, body {
   animation: 1.1s ease-out 0s 1 slideInFromBottom;
 }
 
-@keyframes fade-in-normal {
+@keyframes fade-in-med {
   0%   { opacity: 0; }
   50%   { opacity: .75; }
   100% { opacity: 1; }
 }
 
-.fade-in-normal {
-  animation: 1.6s ease-out 0s 1 fade-in-normal;
+.fade-in-med {
+  animation: 1.6s ease-out 0s 1 fade-in-med;
 }

@@ -41,12 +41,12 @@ export class UberToolComponent implements OnInit {
     const origin = form.value.origin;
     const destination = form.value.destination;
     this.uberPrice = "24.00";
-    this.uberPriceXl = "32.00";
+    this.uberPriceXl = "133.00";
     this.uberApiService.getUberPrice(origin, destination).subscribe((response: Response) => {
-      const uberObj = response.json();
-      this.uberPrice = uberObj.price;
-      console.log(uberObj.price);
-      console.log(uberObj.duration);
+      const ubers = response.json();
+      console.log(ubers);
+      this.uberPrice = ubers.x.price;
+      this.uberPriceXl = ubers.xl.price;    
     });
    
 

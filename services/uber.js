@@ -26,16 +26,38 @@ exports.queryUberAPI = async function (locationObj) {
             }
             else {
                 var results = JSON.parse(body);
-                const low_estimate = results.prices[0].low_estimate;
-                const high_estimate = results.prices[0].high_estimate;
-                const duration = results.prices[0].duration;
-                var uberObj = {
-                    duration: duration / 60,
-                    low_estimate: low_estimate,
-                    high_estimate: high_estimate,
-                    price: (low_estimate + high_estimate) / 2
+                const prices = results.prices;
+
+                //this determines whether uberPool is available in the area.
+                var type = 1;
+                if(prices[0].localized_display_name === 'uberX'){
+                    type = 0;
                 }
-                resolve(uberObj);
+                
+                const low_estimateX = results.prices[type].low_estimate;
+                const high_estimateX = results.prices[type].high_estimate;
+                const durationX = results.prices[type].duration;
+                var uberObjX = {
+                    duration: durationX / 60,
+                    low_estimate: low_estimateX,
+                    high_estimate: high_estimateX,
+                    price: (low_estimateX + high_estimateX) / 2
+                }
+                type++;
+                const low_estimateXl = results.prices[type].low_estimate;
+                const high_estimateXl = results.prices[type].high_estimate;
+                const durationXl = results.prices[type].duration;
+                var uberObjXl = {
+                    duration: durationXl / 60,
+                    low_estimate: low_estimateXl,
+                    high_estimate: high_estimateXl,
+                    price: (low_estimateXl + high_estimateXl) / 2
+                }
+                var ubers = {};
+                ubers.x = uberObjX;
+                ubers.xl = uberObjXl;
+                console.log(ubers);
+                resolve(ubers);
             }
 
         });
